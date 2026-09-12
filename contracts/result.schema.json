@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://insurgent.local/contracts/result.schema.json",
+  "title": "RequestResult",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["version", "status", "summary", "answers", "unresolvedItems", "generatedAt"],
+  "properties": {
+    "version": {"type": "integer", "minimum": 1},
+    "status": {"type": "string", "enum": ["complete", "partial"]},
+    "summary": {"type": "string"},
+    "answers": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["questionId", "question", "rawValue", "status"],
+        "properties": {
+          "questionId": {"type": "string"},
+          "question": {"type": "string"},
+          "rawValue": {"type": ["string", "null"]},
+          "normalizedValue": {"type": ["string", "null"]},
+          "status": {"type": "string", "enum": ["open", "answered", "unavailable", "conflicting", "waived"]},
+          "evidenceStatus": {"type": ["string", "null"], "enum": ["reported", "document_supported", "human_confirmed", null]},
+          "source": {"type": ["string", "null"]}
+        }
+      }
+    },
+    "unresolvedItems": {"type": "array", "items": {"type": "string"}},
+    "generatedAt": {"type": "string", "format": "date-time"}
+  }
+}
