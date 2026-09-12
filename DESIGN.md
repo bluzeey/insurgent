@@ -1,6 +1,6 @@
 # Product design system
 
-This application adapts the supplied Anytype reference selectively for an operational insurance-information workspace.
+This application adapts the supplied Anytype reference selectively for a simple insurance workflow data agent workspace.
 
 ## Decisions
 
@@ -28,8 +28,8 @@ This application adapts the supplied Anytype reference selectively for an operat
 - Cards: flat, white, 1px hairline, square corners.
 - Inputs: 16px radius, black hairline, large touch target.
 - Status pills: compact uppercase labels; color is supportive only, not sole meaning.
-- Request layout: one workspace composer, grouped worklist, detail pane, contextual actions.
+- Agent layout: My agents tab, simple flow tabs, agent composer, grouped agent runs, detail pane, contextual actions.
 
 ## Prohibited UI expansion for MVP
 
-No KPI dashboard, model selector, visual workflow builder, autonomous-agent avatars, arbitrary tool marketplace, or hidden-recipient outbound action.
+No KPI dashboard, model selector, visual workflow builder, avatar based agent theatre, arbitrary tool marketplace, or hidden recipient outbound action.
