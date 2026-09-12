@@ -1,11 +1,27 @@
 # Product plan
-## A small interface for completing information requests across insurance workflows
+## Create agents for getting insurance workflow data
 
-**Owner:** Sahil Maheshwari · **Version:** 0.1 · **Status:** Proposed pilot plan
+**Owner:** Sahil Maheshwari · **Version:** 0.2 · **Status:** Proposed pilot plan
+
+## 0. Simple product model
+
+The product should be easy to understand:
+
+**Create agents that collect data for insurance workflows.**
+
+The user starts from **My agents** and chooses a simple agent type:
+
+1. **Form collection agent** collects basic form data needed to start a workflow.
+2. **Clarification agent** follows up on missing figures, dates, units, or documents.
+3. **Renewal changes agent** checks what changed since last year.
+
+An agent creates a plan. The user reviews and approves the plan. The backend runs the collection flow and returns collected data with gaps and sources.
+
+Use the word **agent** in the UI because it is easier to understand. Use **request**, **plan**, and **result** internally where the backend needs precise state.
 
 ## 1. The product decision
 
-Build an **English-first information-collection assistant for insurance professionals**. A person describes a purpose and an information gap. The system converts that instruction into a bounded request, uses existing context, contacts an approved respondent, asks relevant follow-ups, and returns a structured, source-linked summary by email.
+Build an **English-first data collection agent for insurance professionals**. A person chooses an agent type and describes the data gap. The system converts that instruction into a bounded plan, uses existing context, contacts an approved respondent after approval, asks relevant follow-ups, and returns structured data with sources.
 
 This is not an underwriting dashboard, an autonomous claims engine, a generic chatbot, or a visual agent builder. The customer does not configure prompts, models, tools, chains, or workflow nodes. Their work is to express intent and approve meaningful actions.
 
@@ -56,11 +72,11 @@ Select design partners through your existing insurance conversations and worksho
 
 Prove these three jobs with the same UI, data model, and execution code:
 
-| Request type | Timing | Job | Output |
+| Agent type | Timing | Job | Output |
 |---|---|---|---|
-| Initial collection | Beginning | Collect an expert-provided information checklist | Answers, evidence references, and remaining gaps |
-| Clarification | Middle | Resolve explicitly missing or inconsistent details in an existing request | A response pack mapped to each open question |
-| Renewal changes | Later lifecycle | Ask whether approved prior facts changed, without assuming they remain current | A dated change/no-change/unknown summary |
+| Form collection agent | Beginning | Collect an approved form or checklist | Answers, source references, and remaining gaps |
+| Clarification agent | Middle | Resolve missing or inconsistent details | A response pack mapped to each open question |
+| Renewal changes agent | Later lifecycle | Ask whether approved prior facts changed, without assuming they remain current | A dated change, no change, or unknown summary |
 
 Claims-document follow-up and administrative D&O information collection are **controlled extension tests**, not implied first-release expertise. They can reuse the engine, but require different approved questions, evidence rules, confidentiality controls, and reviewers.
 
@@ -68,9 +84,11 @@ Multi-flow does not mean arbitrary enterprise automation. Keep one main responde
 
 ## 6. The smallest useful interface
 
-**Workspace:** a large instruction box, optional attachments, and a list of requests grouped as Needs you, Running, and Done. Three example instructions help users begin. There are no KPI tiles, model settings, agent avatars, or flow charts.
+**My agents:** cards for Form collection agent, Clarification agent, and Renewal changes agent. Each card creates a plan for that flow.
 
-**Request detail:** objective, current status, next planned action, collected answers, remaining gaps, and a collapsed activity/evidence section. One contextual primary action appears when needed. Pause is always reachable.
+**Flow tabs:** separate tabs for the first agent types, so the user can start from the workflow they already understand.
+
+**Agent run detail:** objective, current status, next planned action, collected answers, remaining gaps, and a collapsed activity and sources section. One contextual primary action appears when needed. Pause is always reachable.
 
 **Settings:** identity/sender setup, a small authorized contact directory, permitted channels, and notification defaults. Advanced risk limits are set by the team owner and displayed in the approval card, not exposed as a complicated control panel for every request.
 
