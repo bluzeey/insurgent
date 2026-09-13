@@ -7,7 +7,7 @@ from app.persistence.in_memory import InMemoryStore
 
 def create_app() -> FastAPI:
     app = FastAPI(
-        title="Insurance Information Agent API",
+        title="insuveo API",
         version="0.1.0",
         description="M1 dry-run API: instruction to approved plan to synthetic result. No real outbound actions.",
     )

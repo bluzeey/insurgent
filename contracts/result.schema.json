@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://insurgent.local/contracts/result.schema.json",
+  "$id": "https://insuveo.local/contracts/result.schema.json",
   "title": "RequestResult",
   "type": "object",
   "additionalProperties": false,

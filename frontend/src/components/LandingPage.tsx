@@ -24,7 +24,7 @@ export function LandingPage() {
   return (
     <main className="landing-page">
       <header className="landing-nav">
-        <a className="wordmark" href="/">Insurgent</a>
+        <a className="wordmark" href="/">insuveo</a>
         <nav aria-label="Primary navigation">
           <a href="#agents">Agents</a>
           <a href="#how">How it works</a>
@@ -39,7 +39,7 @@ export function LandingPage() {
           <em>Collect the data.</em>
         </h1>
         <p className="hero-copy">
-          Insurgent helps insurance teams create simple agents that collect data for their workflows. Start with a form collection agent, review the plan, and approve the run.
+          insuveo helps insurance teams create simple agents that collect data for their workflows. Start with a form collection agent, review the plan, and approve the run.
         </p>
         <div className="hero-actions">
           <a className="button button-primary" href="/dashboard">Create an agent</a>

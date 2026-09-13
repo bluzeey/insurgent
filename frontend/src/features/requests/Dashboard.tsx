@@ -52,7 +52,7 @@ export function Dashboard() {
   return (
     <main>
       <header className="topbar">
-        <a className="wordmark" href="/">Insurgent</a>
+        <a className="wordmark" href="/">insuveo</a>
         <span className="phase-pill">Dry run</span>
       </header>
 
