@@ -5,9 +5,9 @@ export function AgentCatalog({ onSelectFlow }: { onSelectFlow: (flow: FlowKey) =
   return (
     <section className="agent-catalog" aria-labelledby="agents-title">
       <p className="eyebrow">My agents</p>
-      <h1 id="agents-title">Create agents to collect insurance workflow data.</h1>
+      <h1 id="agents-title">Create agents that run insurance information follow-up.</h1>
       <p className="intro">
-        Pick the kind of data you need. The agent prepares a simple plan. You approve it before anything is sent.
+        Pick the workflow, describe the gap, and Insuveo prepares a bounded plan. You approve the exact contact, questions, and limits before anything is sent.
       </p>
       <div className="agent-grid">
         {flowCards.map((agent) => (

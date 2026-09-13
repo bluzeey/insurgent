@@ -1,23 +1,23 @@
 const agents = [
   {
     title: 'Form collection agent',
-    text: 'Collect basic form data from an approved contact.',
+    text: 'Turns an approved checklist or form into a focused collection run.',
   },
   {
     title: 'Clarification agent',
-    text: 'Ask for missing numbers, dates, units, or documents.',
+    text: 'Follows up on missing numbers, dates, units, documents, and source evidence.',
   },
   {
     title: 'Renewal changes agent',
-    text: 'Check what changed since last year.',
+    text: 'Asks what changed since last year without assuming old facts are still true.',
   },
 ];
 
 const steps = [
-  'Choose an agent',
-  'Review the plan',
-  'Approve the run',
-  'Get the collected data',
+  'Describe the gap in plain English.',
+  'Insuveo resolves the contact, questions, limits, and delivery format.',
+  'You review the exact plan before anything is sent.',
+  'The agent collects, follows up, stops on ambiguity, and returns sourced answers.',
 ];
 
 export function LandingPage() {
@@ -26,31 +26,32 @@ export function LandingPage() {
       <header className="landing-nav">
         <a className="wordmark" href="/">insuveo</a>
         <nav aria-label="Primary navigation">
+          <a href="#product">Product</a>
           <a href="#agents">Agents</a>
           <a href="#how">How it works</a>
           <a href="/dashboard">Open dashboard</a>
         </nav>
       </header>
 
-      <section className="landing-hero">
-        <p className="eyebrow">Insurance workflow data</p>
+      <section className="landing-hero" id="product">
+        <p className="eyebrow">AI agents for insurance workflow data</p>
         <h1>
-          Create agents.<br />
-          <em>Collect the data.</em>
+          One instruction replaces the chase.<br />
+          <em>Insuveo runs the follow-up.</em>
         </h1>
         <p className="hero-copy">
-          insuveo helps insurance teams create simple agents that collect data for their workflows. Start with a form collection agent, review the plan, and approve the run.
+          Insuveo turns a plain-English request into a bounded data-collection agent. It finds the approved contact, asks only for the missing facts, follows up inside your limits, and returns a source-linked summary.
         </p>
         <div className="hero-actions">
           <a className="button button-primary" href="/dashboard">Create an agent</a>
-          <a className="text-link" href="#agents">See agent types</a>
+          <a className="text-link" href="#how">See how it works</a>
         </div>
-        <p className="notice-line">This is a dry run. No real emails or calls are sent.</p>
+        <p className="notice-line">Dry run mode: no real emails or calls are sent.</p>
       </section>
 
       <section className="landing-section" id="agents">
-        <p className="eyebrow">Agent types</p>
-        <h2>Start with the data you need.</h2>
+        <p className="eyebrow">Today</p>
+        <h2>Agents that run insurance information operations.</h2>
         <div className="workflow-grid">
           {agents.map((item) => (
             <article key={item.title} className="landing-card">
@@ -64,7 +65,7 @@ export function LandingPage() {
       <section className="landing-section split" id="how">
         <div>
           <p className="eyebrow">How it works</p>
-          <h2>The app stays simple.</h2>
+          <h2>The agent does the mechanical work. You keep the judgment.</h2>
         </div>
         <ul className="safeguard-list">
           {steps.map((item) => <li key={item}>{item}</li>)}
@@ -73,13 +74,13 @@ export function LandingPage() {
 
       <section className="landing-section split">
         <div>
-          <p className="eyebrow">Controls</p>
-          <h2>You stay in control.</h2>
+          <p className="eyebrow">Platform</p>
+          <h2>Your team and the agents share the same request record.</h2>
         </div>
         <div className="section-copy">
-          <p>No agent contacts anyone before you approve the plan.</p>
-          <p>If the contact or scope is unclear, the agent stops and asks you to clarify.</p>
-          <p>Every result shows what was answered, what is still missing, and where the answer came from.</p>
+          <p>Each agent run has a plan, approval, status, next action, collected answers, gaps, and sources.</p>
+          <p>No agent contacts anyone before approval. If the contact or scope is unclear, it stops and asks you to clarify.</p>
+          <p>The goal is not autonomous insurance judgment. Insuveo handles the chase so insurance teams can review facts, make decisions, and work with clients.</p>
         </div>
       </section>
 
