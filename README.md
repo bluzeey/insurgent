@@ -15,18 +15,22 @@ An agent is a safe preset for collecting data. It is not an autonomous insurance
 
 ## What is built now
 
-- `frontend/`: React, TypeScript, Vite, pnpm.
+- `frontend/`: React, TypeScript, Vite, pnpm app workspace.
 - `backend/`: FastAPI dry run API.
 - `contracts/`: plan and result schemas.
-- `DESIGN.md`: product design notes.
+- `DESIGN.md`: product/app design notes.
 - `IMPLEMENTATION_PHASES.md`: build phases.
 
 No real emails, calls, or provider actions are sent in this version.
 
+## Repository role
+
+This repo is now the app/product logic workspace. The public marketing website lives in the separate `insuveo-web` Next.js app.
+
 ## Routes
 
-- `/`: landing page.
-- `/dashboard`: agent dashboard.
+- `/`: agent dashboard app.
+- `/dashboard`: agent dashboard app.
 
 ## Run locally
 
